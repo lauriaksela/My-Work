@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang=fi>
+<head>
+	<title>Painoindeksi</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Laske painoindeksisi</h1>
+	<form id="lomake">
+		<label for="pituus">Pituutesi</label>
+		<input id="pituus" type="text" name="pituus">
+		<label for="paino">Painosi</label>
+		<input id="paino" type="text" name="paino">
+		<button type="submit">Laske</button>
+	</form>
+
+	<p>Painoindeksisi on: <span id="tulos"></span></p>
+
+	<button id="arvioi">Arvioi tulos</button>
+
+	<p id="arvioteksti"></p>
+<script src="bmi.js"></script>
+</body>
+</html>

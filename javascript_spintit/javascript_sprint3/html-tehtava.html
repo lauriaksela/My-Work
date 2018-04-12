@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="utf-8" />
+  <title>HTML-tehtävä</title>
+  <link href="tyyli.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <div>JavaScript-ohjelmointi
+      <div>
+  </header>
+  <main>
+    <h1>HTML-tehtävä</h1>
+    <p>Mitä HTML-elementtejä tämä sivu sisältää? Selitä jokainen lyhyesti.</p>
+    <p>Tietoa löydät vaikkapa näistä lähteistä:</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML element reference</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">W3Schools HTML Tutorial</a></li>
+    </ul>
+    <div id="vastaus"></div>
+  </main>
+  <footer>
+    <div>Helsinki Business College, Tieto- ja Viestintätekniikka
+      <div>
+  </footer>
+
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script>
+    "use strict";
+    $(document).ready(function() {
+      var tags = $('*').toArray().map(function(elem) {
+        return elem.tagName;
+      });
+      var tag_set = new Set(tags).values();
+      var tag_list = Array.from(tag_set);
+      tag_list.forEach(function(tag) {
+        console.log(tag)
+      });
+
+      //
+      // Lisää tässä jQuery:n avulla vastaus sivulle
+      // 1. Hae oikea elementti jQuery-selektorilla
+      // 2. Lisää elementtiin HTML-sisältö mallin mukaan:
+      // - otsikko
+      // - otsaketeksti
+      // - tagit järjestämättömänä listana (ul).
+      //
+      // Vinkki 1: tagilistan saat ylläolevasta koodista valmiina
+      // Vinkki 2: etsi materiaaleista metodi, jolla sisältöä voi lisätä elementtiin
+      // Vinkki 3: listan läpikäynti on kätevintä forEach-metodilla
+
+      // lisää koodisi tähän!!!
+	  var vastausElementti = $('#vastaus');
+	  vastausElementti.append("<h2>Vastaus</h2>");
+	  vastausElementti.append("<p>Tässä dokumentissä esiintyvät HTML-elementit:</p>");
+	  vastausElementti.append("<ul>");
+	  
+	  tag_list.forEach(function(tag) {
+        vastausElementti.append("<li>" + tag + "</li>");
+      });
+	  
+	  vastausElementti.append("</ul>");
+
+    });
+  </script>
+</body>
+
+</html>

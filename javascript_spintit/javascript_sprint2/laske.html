@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang=fi>
+<head>
+	<title>Luettele numeroita</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Luettele numeroita</h1>
+	<form onsubmit="return luetteleNumeroita()" id="lomake">
+		<label for="luku">Anna luku: </label>
+		<input id="luku" type="text" name="luku">
+		<button type="submit">Laske</button>
+	</form>
+	<div id="tulosalue"></div>
+	<p id="printti"></p>
+<script>
+"use strict";
+
+function luetteleNumeroita() {
+	//
+	// Tehtävä: Kirjoita tähän ohjelma, joka kirjoittaa tulosalueelle numerot yhdestä annettuun lukuun.
+	// Muista, että sinun pitää kirjoittaa tulosalueelle html-koodia, jotta se näkyy sivulla oikein!
+	//
+
+	var text = "";
+	var i = 1;
+	while (i < document.getElementById("luku").value) {
+    text += "<br>The number is " + i;
+    i++;
+	}
+	document.getElementById("printti").innerHTML = text;
+
+	// testitulostus koodaria helpottamaan
+	console.log(text);
+
+	// kirjoita tulos html-dokumenttiin
+
+
+	// tämä on tässä siksi, jotta lomaketta ei oikeasti lähetettäisi
+	// lähetys lataisi sivun uudelleen ja tyhjentäisi kentät
+	return false;
+}
+</script>
+</body>
+</html>
